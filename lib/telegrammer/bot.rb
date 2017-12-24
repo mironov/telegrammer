@@ -20,6 +20,9 @@ module Telegrammer
       @timeout = 60
       @fail_silently = false
       @connection = HTTPClient.new
+      @connection.connect_timeout = 600
+      @connection.send_timeout = 600
+      @connection.receive_timeout = 600
 
       @me = get_me
     end
